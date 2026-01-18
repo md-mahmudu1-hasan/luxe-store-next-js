@@ -10,7 +10,6 @@ export default function LoginPage() {
   const [email, setEmail] = useState("user@example.com");
   const [password, setPassword] = useState("password");
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
   const { login } = useAuth();
 
   const handleLogin = async (e) => {
@@ -18,7 +17,7 @@ export default function LoginPage() {
     setIsLoading(true);
 
     // Mock authentication
-    if (email === "user@example.com" && password === "password") {
+    if (email === "user@example.com" && password === "userpassword") {
       setTimeout(() => {
         login();
       }, 1000);
@@ -54,7 +53,6 @@ export default function LoginPage() {
               </div>
               <input
                 type="email"
-                value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="block w-full pl-10 px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-neutral-500 transition-all"
                 placeholder="you@example.com"
@@ -73,17 +71,11 @@ export default function LoginPage() {
               </div>
               <input
                 type="password"
-                value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="block w-full pl-10 px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-neutral-500 transition-all"
                 placeholder="••••••••"
                 required
               />
-            </div>
-            <div className="mt-2 text-right">
-              <span className="text-xs text-neutral-500">
-                Hint: user@example.com / password
-              </span>
             </div>
           </div>
 

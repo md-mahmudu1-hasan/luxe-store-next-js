@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #171717;
+  --secondary-foreground: #a1a1aa;
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+  --border: #262626;
+  --input: #262626;
+  --ring: #3b82f6;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Premium Card Hover Effects */
+.premium-card {
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  background: rgba(23, 23, 23, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.premium-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+}
